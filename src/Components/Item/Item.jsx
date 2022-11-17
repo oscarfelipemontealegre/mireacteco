@@ -1,7 +1,7 @@
 import '../Item/Item.css';
 import React from 'react';
 
-const Item =(info)=>{
+const Item =({info})=>{
     return(
         <a href='/' className='productosPet'>
             <img src={info.image} alt=""/>
