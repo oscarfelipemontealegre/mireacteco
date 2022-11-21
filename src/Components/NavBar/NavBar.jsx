@@ -1,7 +1,7 @@
 import React from "react";
 import '../NavBar/NavBar.css';
 import Cartwidget from "../CartWidget/CartWidget";
-
+import { NavLink } from "react-router-dom";
 
 
 export const NavBar=() => {
@@ -9,25 +9,25 @@ export const NavBar=() => {
     
         <div className="cointerner">
             <nav className="nav">
-                <div className="nav_brand">
-                    <a className="nav_link" href="/">mi negocio</a>
-                </div>
                 <ul className="nav_list">
                     <li>
-                        <a className="fa-solid fa-user-astronaut"  href="/">categorias</a>
+                        <NavLink className="fa-solid fa-user-astronaut"  to="/">tuamigofiel</NavLink>
                     </li>
                     <br/>
 
                     <li>
-                        <a className=" fa-solid fa-magnifying-glass"  href="/">productos vip</a>
+                        <NavLink className=" fa-solid fa-magnifying-glass"  to="/categorias/dormir">dormir</NavLink>
                     </li>
                     
                     <li>
-                        <a className=" fa-solid fa-magnifying-glass"  href="/">faqs</a>
+                        <NavLink className=" fa-solid fa-magnifying-glass"  to="/categorias/comer">comer</NavLink>
+                    </li>
+                    <li>
+                        <NavLink className=" fa-solid fa-magnifying-glass"  to="/categorias/calle">calle</NavLink>
                     </li>
 
                     <li>
-                        <a className=" fa-solid fa-magnifying-glass"  href="/">login</a>
+                        <NavLink className=" fa-solid fa-magnifying-glass"  to="/">login</NavLink>
                     </li>
 
                     <form className="d-flex" role="search">
@@ -37,7 +37,7 @@ export const NavBar=() => {
                     </form>
 
                     <li>
-                        <a className="fa-solid fa-shop"  href="/"><Cartwidget/></a>
+                        <NavLink className="fa-solid fa-shop"  to="/"><Cartwidget/></NavLink>
                     </li>
 
                 </ul>

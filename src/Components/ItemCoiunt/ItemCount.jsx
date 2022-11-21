@@ -2,7 +2,7 @@ import  './ItemCount.css';
 import React from "react";
 import { useState } from 'react';
 
-export const ItemCount = ({initial, stock, anAdd}) =>{
+export const ItemCount = ({initial, stock, onAdd}) =>{
     const [count, setCount] = useState(initial);
 
     const disminuir = () =>{
@@ -22,7 +22,7 @@ export const ItemCount = ({initial, stock, anAdd}) =>{
 
             <div>
             <br/>
-            <button>agregar al carrito</button>
+            <button onClick={() =>onAdd(count)}>agregar al carrito</button>
             </div>
         </div>
     );

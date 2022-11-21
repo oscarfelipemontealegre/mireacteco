@@ -1,0 +1,20 @@
+.card{
+    width:50%;
+
+}
+
+.imagen{
+    width: 50%;
+    height: 20%;
+    padding: 10px;
+    align-items: center;
+    text-align: center;
+    padding-right: 50px;
+    background: fixed;
+}
+
+.bodycard{
+    width: 80%;
+    align-items: center;
+    text-align: center;
+}
