@@ -7,7 +7,7 @@ const Item =({info})=>{
         
 
     <div className='card'>
-        <Link  to={'/item/${info.id}'} className='productosPet'>
+        <Link  to={`/item/${info.id}`} className='productosPet'>
             
             <img src={info.image} alt="" className='imagen'/>
             <div className='bodycard'>

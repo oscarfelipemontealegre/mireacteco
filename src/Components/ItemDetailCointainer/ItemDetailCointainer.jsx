@@ -10,7 +10,7 @@ const productosPet=[
     
 const ItemDetailCointainer =()=>{
     const [detalle, setDetalle] = useState({});
-    const{id}=useParams
+    const{id}=useParams()
 
 
     useEffect(()=>{

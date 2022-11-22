@@ -4,8 +4,11 @@ import ItemCount from '../ItemCoiunt/ItemCount';
 
 
 
+
 const ItemDetail =({detalle})=>{
-    const  onAdd = (cantidad) =>{}
+    const  onAdd = (cantidad) =>{
+        console.log(`compraste ${cantidad} de productos`)
+    }
     return(
         <div className='card'>
         <a href='/' className='productosPet'>
@@ -16,7 +19,7 @@ const ItemDetail =({detalle})=>{
             <h2 className='nombre'>{detalle.producto} </h2>
             <h4 className='precio'>{detalle.precio}</h4>
              <ItemCount initial={1} stock={5} onAdd={onAdd}/>
-            <a href="/" className='btn btn-primary'>comprar</a>
+            
             </div>
         </a>
     </div>
