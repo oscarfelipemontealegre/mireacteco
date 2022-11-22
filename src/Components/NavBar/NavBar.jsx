@@ -37,7 +37,7 @@ export const NavBar=() => {
                     </form>
 
                     <li>
-                        <NavLink className="fa-solid fa-shop"  to="/"><Cartwidget/></NavLink>
+                        <NavLink className="fa-solid fa-shop"  to="Cart"><Cartwidget/></NavLink>
                     </li>
 
                 </ul>
