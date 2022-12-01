@@ -1,8 +1,10 @@
-
+import './ItemDetail.css';
 import React from 'react';
 import ItemCount from '../ItemCoiunt/ItemCount';
 import { useState } from 'react';
 import {Link} from 'react-router-dom';
+import {useCartContext} from './Context/CartContext';
+
 
 
 
@@ -10,14 +12,16 @@ import {Link} from 'react-router-dom';
 
 const ItemDetail =({detalle})=>{
     const [Compra, setCompra] = useState(false)
-    
+    const {addProduct}= useCartContext();
+
     const  onAdd = (count) =>{
         setCompra(true);
+        addProduct(detalle, count);
 
-    }
+    
     return(
         <div className='card'>
-        <Link to='/' className='productosPet'>
+        
             
             <img src={detalle.image} alt={detalle.producto} className='imagen'/>
             <div className='bodycard'/>
@@ -30,10 +34,11 @@ const ItemDetail =({detalle})=>{
                     : <ItemCount initial={1} stock={8} onAdd={onAdd}/>
                 }
             <div/>
-        </Link>
+        
     </div>
     );
 
+}
 }
 
 export default ItemDetail;
