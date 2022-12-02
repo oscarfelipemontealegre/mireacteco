@@ -3,6 +3,7 @@ import React from 'react';
 
 const itemList =({data = []})=>{
     return(
+        
         data.map(productosPet => <Item key={productosPet.id} info={productosPet}/>)
     );
 

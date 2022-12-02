@@ -5,14 +5,13 @@ import { CartContext } from '../../Context/CartContext';
 
 
 const Item =({info})=>{
-    const nombre =  useContext(CartContext);
-    console.log('Item:', nombre)
+    
 
     return(
         
 
     <div className='card'>
-        <Link  to={`/item/${info.id}`} className='productosPet'>
+        <Link  to={`/detalle/${info.producto}`} className='productosPet'>
             
             <img src={info.image} alt="" className='imagen'/>
             <div className='bodycard'>

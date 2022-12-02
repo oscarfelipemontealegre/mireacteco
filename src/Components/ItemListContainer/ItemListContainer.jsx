@@ -13,7 +13,7 @@ export const ItemListContainer =(props)=>{
     useEffect(() =>{
         getData.then(res=> {
             if (categoriasId){
-                setData(res.filter((item) => item.categoria === categoriasId))
+                setData(res.filter((productosPet) => productosPet.categoria === categoriasId))
             }else{
                 setData(res)
             }
