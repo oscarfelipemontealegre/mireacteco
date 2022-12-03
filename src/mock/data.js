@@ -1,3 +1,5 @@
+
+
 const productosPet=[
     { id:1, image: "https://www.ammascotas.com/wp-content/uploads/2016/11/Dosificadordobleusorojo.jpg",
         producto:"comedero", precio:10000, categoria:'comer'},
@@ -7,8 +9,17 @@ const productosPet=[
     categoria:'calle'}
 ]
 
- export const getData = new Promise(resolve=>{
+export const getData = new Promise(resolve=>{
     setTimeout(() =>{
         resolve(productosPet);
     },3000 );
 });
+
+export const getProduct = (id) => {
+    return new Promise((resolve) => {
+        const prod = productosPet.find(p => p.id === parseInt(id))
+        setTimeout(() => {
+            resolve(prod)
+        }, 1000)
+    })
+  }

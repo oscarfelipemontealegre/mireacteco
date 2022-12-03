@@ -1,21 +1,22 @@
-import { getData } from '../../mock/data';
+import { getData, getProduct } from '../../mock/data';
 import React, { useEffect, useState } from 'react';
 import { useParams } from 'react-router-dom';
 import ItemDetail from '../ItemDetail/ItemDetail';
+import {getFirestore, doc, getDocs} from 'firebase/firestore';
 
 
 const productosPet=[
     { id:1, image: "https://www.ammascotas.com/wp-content/uploads/2016/11/Dosificadordobleusorojo.jpg",
-        producto:"comedero", precio:10000},]
+        producto:"comedero", precio:10000, unidades:6},]
     
 const ItemDetailCointainer =()=>{
     const [detalle, setDetalle] = useState({});
-    const{id}=useParams()
+    const{detalleId}=useParams()
 
 
     useEffect(()=>{
-        getData.then(res => setDetalle(res.find((item)=> item.id == Number(id))));
-    },[id])
+        getProduct(detalleId).then(res => setDetalle(res))
+    }, [detalleId])
     
     return(
     <div>

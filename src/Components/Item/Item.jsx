@@ -1,7 +1,7 @@
 import '../Item/Item.css';
-import React, {useContext} from 'react';
+import React from 'react';
 import { Link } from 'react-router-dom';
-import { CartContext } from '../../Context/CartContext';
+
 
 
 const Item =({info})=>{
@@ -11,7 +11,7 @@ const Item =({info})=>{
         
 
     <div className='card'>
-        <Link  to={`/detalle/${info.producto}`} className='productosPet'>
+        <Link  to={`/detalle/${info.id}`} className='productosPet'>
             
             <img src={info.image} alt="" className='imagen'/>
             <div className='bodycard'>

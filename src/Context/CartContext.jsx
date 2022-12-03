@@ -1,5 +1,5 @@
 import React, {useState, useContext} from "react"
-import Cart from "../Components/Cart/Cart";
+
 
 const CartContext = React.createContext([]);
 export const useCartContext = () =>  useContext(CartContext)
@@ -11,18 +11,31 @@ const CartProvider = ({children}) => {
     const [cartList, setCartList] = useState([]);
 
     const addProdruct = (item, count)=>{
-        let newCart;
-        let producto = Cart.find(producto =>producto.id === item.id);
-        if (producto){
-            producto.count +=count;
-            newCart = [...cartList];
+        //let newCart;
+        //let producto = Cart.find(producto =>producto.id === item.id);
+        //if (producto){
+          //  producto.count +=count;
+           // newCart = [...cartList];
 
+       // } else{
+           // producto = {...item,count: count};
+           // newCart = [...cartList, producto];
+        //}
+        //setCartList(newCart)
+        if (findCart(item.id)) {
+            setCartList(cartList.map(producto =>{
+                return producto.id === item.id ? {...producto,count: producto.count + count} : producto
+            }));
         } else{
-            producto = {...item,count: count};
-            newCart = [...cartList, producto];
+            setCartList([...cartList, {...item, count}]);
         }
-        setCartList(newCart)
     } 
+    
+    const precioTotal = () =>{
+        return cartList.reduce ((prev, act) => prev + act.count * act.precio, 0);
+    }
+
+    const  productosTotales = () => cartList.reduce((acumulador, productoActual)=> acumulador + productoActual.count, 0)
 
     const deleteCart = () => setCartList([]);
 
@@ -40,6 +53,9 @@ const CartProvider = ({children}) => {
             findCart,
             removeCart,
             addProdruct,
+            precioTotal,
+            productosTotales,
+            cartList
         }}>
             {children}
             

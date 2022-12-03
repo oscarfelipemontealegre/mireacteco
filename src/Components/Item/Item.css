@@ -1,20 +1,19 @@
 .card{
-    width:50%;
+    box-shadow:18px 14px 16px;
+    width: 350px;
+    height: 500px;
+    margin: auto;
+    border: 10px;
+    border-radius: 20px;
+    background-color: brown;
 
 }
 
 .imagen{
-    width: 50%;
-    height: 20%;
-    padding: 10px;
-    align-items: center;
-    text-align: center;
-    padding-right: 50px;
-    background: fixed;
+    max-width: 350px;
+    height: auto;
+    border-radius: 20px;
+    
 }
 
-.bodycard{
-    width: 80%;
-    align-items: center;
-    text-align: center;
-}
+

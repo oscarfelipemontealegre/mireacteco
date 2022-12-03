@@ -4,6 +4,20 @@
     margin: auto;
     padding: 10px;
     text-align: center;
-
+    border-radius: 10px;
+    box-shadow: inset;
 
 }
+
+.boton{
+    border-radius: 10px;
+    background-color: rgb(255, 72, 0);
+    border: none;
+}
+
+.carrito{
+    border-radius: 10px;
+    background-color: blanchedalmond;
+    
+}
+
