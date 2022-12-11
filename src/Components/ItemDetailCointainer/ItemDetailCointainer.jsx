@@ -1,8 +1,8 @@
-import { getData, getProduct } from '../../mock/data';
+import { getProduct } from '../../mock/data';
 import React, { useEffect, useState } from 'react';
 import { useParams } from 'react-router-dom';
 import ItemDetail from '../ItemDetail/ItemDetail';
-import {getFirestore, doc, getDocs} from 'firebase/firestore';
+
 
 
 const productosPet=[

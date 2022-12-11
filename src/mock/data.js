@@ -22,4 +22,4 @@ export const getProduct = (id) => {
             resolve(prod)
         }, 1000)
     })
-  }
+}

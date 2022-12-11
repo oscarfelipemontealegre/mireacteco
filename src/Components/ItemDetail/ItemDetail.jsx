@@ -1,6 +1,6 @@
 import './ItemDetail.css';
 import React from 'react';
-import ItemCount from '../ItemCoiunt/ItemCount';
+import ItemCount from '../ItemCount/ItemCount';
 import { useState } from 'react';
 import {Link} from 'react-router-dom';
 import {useCartContext} from '../../Context/CartContext';
