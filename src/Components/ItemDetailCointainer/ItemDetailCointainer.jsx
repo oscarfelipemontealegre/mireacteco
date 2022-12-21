@@ -14,10 +14,10 @@ import {getFirestore, doc, getDoc} from 'firebase/firestore';
 
         useEffect(() => {
             const querydb = getFirestore();
-            const queryDoc = doc(querydb, 'productostuamigofiel','detalleId');
+            const queryDoc = doc(querydb, 'productostuamigofiel',detalleId);
             getDoc(queryDoc)
                 .then(res => setDetalle({ id: res.id, ...res.detalle() }));
-        }, []);
+        }, [detalleId]);
 
         return (
 

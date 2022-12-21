@@ -17,11 +17,11 @@ export const ItemListContainer =(props)=>{
             if (categoriasId){
                 const queryFilter = query(queryCollection, where('categoria', '==', categoriasId))
                 getDocs(queryFilter)
-                    .then(res => setData(res.docs.map((productostuamigofiel)=>({ id: productostuamigofiel.id, ...productostuamigofiel.detalle() }))));
-                setData(res.filter((productostuamigofiel) => productostuamigofiel.categoria === categoriasId))
+                    .then(res => setData(res.docs.map((productostuamigofiel)=>({ id: productostuamigofiel.id, ...productostuamigofiel.data() }))));
+                
             }else{
                 getDocs(queryCollection)
-                    .then(res => setData(res.docs.map(productostuamigofiel=>({ id: productostuamigofiel.id, ...productostuamigofiel.detalle() }))));
+                    .then(res => setData(res.docs.map(productostuamigofiel=>({ id: productostuamigofiel.id, ...productostuamigofiel.data() }))));
             }
         
             
