@@ -2,13 +2,13 @@ import React from 'react';
 import { useCartContext } from '../../Context/CartContext';
 import './ItemCart.css';
 import { Link } from "react-router-dom";
-import ItemCount from '../ItemCount/ItemCount';
+
 
 
 const ItemCart = ({ producto})=>{
-    const {removeCart, Compra, onAdd} = useCartContext();
+    const {removeCart} = useCartContext();
     return(
-        <div className='card'>
+        <div className='card mb-5'>
         
             
         <img src={producto.image} alt={producto.producto} className='imagen'/>
@@ -18,12 +18,14 @@ const ItemCart = ({ producto})=>{
         <h4 className='precio'>{producto.precio}</h4>
         <h4 className='cantidad'>{producto.count}</h4>
         <p>Subtotal ${producto.count * producto.precio} </p>
-        <button onClick={() => removeCart(producto.id)}>Eliminar</button>
-            {
-                Compra
-                ? <Link to='/Cart'>terminar compra</Link>
-                : <ItemCount initial={1} stock={8} onAdd={onAdd}/>
-            }
+        <br/>
+        
+        <br />
+            <div>
+              <button className='eliminar' onClick={() => removeCart(producto.id)}>Eliminar</button>
+               <br />
+                <Link to='/Cart' className='aling-content-center'  >terminar compra</Link>
+            </div>   
         <div/>
     
 </div>

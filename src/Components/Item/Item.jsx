@@ -10,7 +10,7 @@ const Item =({info})=>{
     return(
         
 
-    <div className='card'>
+    <div className='card mb-5'>
         <Link  to={`/detalle/${info.id}`} className='productosPet'>
             
             <img src={info.image} alt="" className='imagen'/>

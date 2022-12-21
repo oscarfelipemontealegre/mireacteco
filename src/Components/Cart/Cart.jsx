@@ -22,9 +22,11 @@ const Cart = ()=>{
             {
                 cartList.map( producto => <ItemCart key={producto.id} producto={producto} />)
             }
-            <p>
+            <div>
+            <button className='total align-content-between'>
                 Total: {precioTotal()}
-            </p>
+            </button>
+            </div>
         </>
     )
 }

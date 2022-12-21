@@ -41,7 +41,7 @@ const CartProvider = ({children}) => {
 
     const findCart = (id) => cartList.find(Item => Item.id === id) ? true : false; 
 
-    const removeCart =(id) =>setCartList([]);
+    const removeCart =(id) =>setCartList(cartList.filter(Item =>Item.id !==id));
     
 
 

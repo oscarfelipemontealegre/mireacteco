@@ -3,21 +3,27 @@ import  Title from '../Title/Title';
 import { useState } from "react";
 import { useEffect } from "react";
 import ItemList from "../ItemList/ItemList";
-import { getData } from "../../mock/data";
 import { useParams } from "react-router-dom";
+import {getFirestore, collection, getDocs,query,where} from 'firebase/firestore';
 
 
 export const ItemListContainer =(props)=>{
     const [data,setData]= useState([]);
     const {categoriasId}=useParams()
     useEffect(() =>{
-        getData.then(res=> {
+        const querydb = getFirestore();
+        const queryCollection = collection(querydb, 'productostuamigofiel');
+        
             if (categoriasId){
-                setData(res.filter((productosPet) => productosPet.categoria === categoriasId))
+                const queryFilter = query(queryCollection, where('categoria', '==', categoriasId))
+                getDocs(queryFilter)
+                    .then(res => setData(res.docs.map((productostuamigofiel)=>({ id: productostuamigofiel.id, ...productostuamigofiel.detalle() }))));
+                setData(res.filter((productostuamigofiel) => productostuamigofiel.categoria === categoriasId))
             }else{
-                setData(res)
+                getDocs(queryCollection)
+                    .then(res => setData(res.docs.map(productostuamigofiel=>({ id: productostuamigofiel.id, ...productostuamigofiel.detalle() }))));
             }
-        })
+        
             
     }, [categoriasId])
 

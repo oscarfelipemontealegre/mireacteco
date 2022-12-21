@@ -1,0 +1,23 @@
+.card{
+    box-shadow:18px 14px 16px;
+    width: 200px;
+    height: 300px;
+    margin: auto;
+    border: 10px;
+    border-radius: 20px;
+    background-color: brown;
+    
+
+}
+
+.imagen{
+    max-width: 200px;
+    height: 150px;
+    border-radius: 20px;
+    align-content: space-between;
+    
+}
+
+.eliminar{
+    border-radius: 10px;
+}
