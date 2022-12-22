@@ -11,13 +11,13 @@ const productosPet=[
 
 export const getData = new Promise(resolve=>{
     setTimeout(() =>{
-        resolve(productosPet);
+        resolve(productostumejoramigo);
     },3000 );
 });
 
 export const getProduct = (id) => {
     return new Promise((resolve) => {
-        const prod = productosPet.find(p => p.id === parseInt(id))
+        const prod = productostumejoramigo.find(p => p.id === parseInt(id))
         setTimeout(() => {
             resolve(prod)
         }, 1000)
