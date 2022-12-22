@@ -16,7 +16,7 @@ import {getFirestore, doc, getDoc} from 'firebase/firestore';
             const querydb = getFirestore();
             const queryDoc = doc(querydb, 'productostuamigofiel',detalleId);
             getDoc(queryDoc)
-                .then(res => setDetalle({ id: res.id, ...res.detalle() }));
+                .then(res => setDetalle({ id: res.id, ...res.data() }));
         }, [detalleId]);
 
         return (
