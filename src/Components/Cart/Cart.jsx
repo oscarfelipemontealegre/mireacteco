@@ -46,7 +46,7 @@ const Cart = ()=>{
             <button className='total align-content-between'>
                 Total: {precioTotal()}
             </button>
-            <button  onClick={handleClick}> emitar compra</button>
+            <button  onClick={handleClick}> emitir compra</button>
             </div>
         </>
     )
